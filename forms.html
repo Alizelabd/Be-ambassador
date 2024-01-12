@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="صفحة كسن سفيرا">
+    <title>كن سفيرا</title>
+
+    <!-- Bootstrap Css File -->
+    <link rel="stylesheet" href="./css/bootstrap.rtl.min.css">
+    <!-- Main Css File -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Font Google Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-yallow-color">
+    <h1 class="text-center fw-bold font-sz5 my-3">نأمل منكم ملء الاستمارة بدقة</h1>
+    <div class="container p-1">
+        <form>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="mb-3">
+                        <input type="text" id="name" name="name" placeholder="الاسم الثلاثي " value=""
+                            class="form-control" required>
+                    </div>
+                </div>
+                <!-- الجنسية -->
+                <div class="col-md-6 mb-4">
+                    <div class="mb-3">
+                        <select required class="form-select " name="nationality" aria-label="الجنسية">
+                            <option value="">الجنسية</option>
+                            <option value="سوري">سوري</option>
+                            <option value="مصري">مصري</option>
+                            <option value="سعودي">سعودي</option>
+                            <option value="لبناني">لبناني</option>
+                            <option value="أردني">أردني</option>
+                            <option value="فلسطيني">فلسطيني</option>
+                            <option value="عراقي">عراقي</option>
+                            <option value="كويتي">كويتي</option>
+                            <option value="قطري">قطري</option>
+                            <option value="بحريني">بحريني</option>
+                            <option value="سوداني">سوداني</option>
+                            <option value="عماني">عماني</option>
+                            <option value="ليبي">ليبي</option>
+                            <option value="يمني">يمني</option>
+                            <option value="جزائري">جزائري</option>
+                            <option value="مغربي">مغربي</option>
+                            <option value="موريتاني">موريتاني</option>
+                            <option value="إماراتي">إماراتي</option>
+                            <option value="صومالي">صومالي</option>
+                            <option value="غير ذلك">غير ذلك</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- نهاية -->
+                <div class="col-md-6 mb-4">
+                    <div class="mb-3">
+                        <input type="text" id="position" name="position" class="form-control "
+                            placeholder="مكان الإقامة الحالي" required>
+                    </div>
+                </div>
+                <!-- المؤهل الدراسي -->
+                <div class="col-md-6 mb-4">
+                    <div class="mb-3">
+                        <input type="text" id="educational" name="educational" class="form-control"
+                            placeholder="المؤهل الدراسي" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="font-sz3 my-3 text-center">روابط حساباتكم على منصات التواصل الاجتماعي :
+                </h3>
+                <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="LinkedIn" name="linkedin"
+                        id="Linkedin"></div>
+                <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Facebook" name="facebook"
+                        id="facebook"></div>
+                <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Twitter 'X'" name="x"
+                        id="x"></div>
+                <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Instagram"
+                        name="instagram" id="instagram"></div>
+                <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Tik Tok" name="tiktok"
+                        id="tiktok"></div>
+                <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Snapchat" name="snapchat"
+                        id="snapchat"></div>
+                <p class="font-sz1 mb-4 text-danger fw-medium text-center">ادخل على الأقل اثنين من حساباتك على منصات التواصل
+                    الاجتماعي</p>
+
+                <div class="col-md-6 mb-4">
+                    <label for="videolink" class="form-label">رابط فيديو لمقطع تدريبي حديث:</label>
+                    <input required class="form-control" type="url" name="videolink" id="videolink">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label for="text2" class="form-label">ما السبب الرئيسي لحماسك للانضمام لمبادرتنا؟</label>
+                    <input required class="form-control" type="text" name="text2" id="text2">
+                </div>
+                <div class="col-md-12 mb-2">
+                    <label class="form-label">
+                        هل هناك نقاط تعاون أخرى يمكن أن تكون بيننا في المستقبل ؟
+                    </label>
+                    <textarea required class="form-control" id="" rows="2"></textarea>
+                </div>
+                <!-- العنوان الحالي -->
+                <!-- <div class="col-md-6 mb-4">
+                    <div class="mb-3">
+                        <select class="form-select " name="address" aria-label="العنوان">
+                            <option value="">العنوان </option>
+                            <option value="ARNAVUTKÖY">ARNAVUTKÖY</option>
+                            <option value="ATAŞEHİR">ATAŞEHİR</option>
+                            <option value="AVCILAR">AVCILAR</option>
+                            <option value="BAĞCILAR">BAĞCILAR</option>
+                            <option value="BAHÇELİEVLER">BAHÇELİEVLER</option>
+                            <option value="BAKIRKÖY">BAKIRKÖY</option>
+                            <option value="BAŞAKŞEHİR">BAŞAKŞEHİR</option>
+                            <option value="BAYRAMPAŞA">BAYRAMPAŞA</option>
+                            <option value="BEŞİKTAŞ">BEŞİKTAŞ</option>
+                            <option value="BEYLİKDÜZÜ">BEYLİKDÜZÜ</option>
+                            <option value="BEYOĞLU">BEYOĞLU</option>
+                            <option value="BÜYÜKÇEKMECE">BÜYÜKÇEKMECE</option>
+                            <option value="BEYKOZ">BEYKOZ</option>
+                            <option value="ÇATALCA">ÇATALCA</option>
+                            <option value="ÇEKMEKÖY">ÇEKMEKÖY</option>
+                            <option value="ESENLER">ESENLER</option>
+                            <option value="ESENYURT">ESENYURT</option>
+                            <option value="EYÜP">EYÜP</option>
+                            <option value="FATİH">FATİH</option>
+                            <option value="GAZİOSMANPAŞA">GAZİOSMANPAŞA</option>
+                            <option value="GÜNGÖREN">GÜNGÖREN</option>
+                            <option value="KADIKÖY">KADIKÖY</option>
+                            <option value="KAĞITHANE">KAĞITHANE</option>
+                            <option value="KARTAL">KARTAL</option>
+                            <option value="KÜÇÜKÇEKMECE">KÜÇÜKÇEKMECE</option>
+                            <option value="MALTEPE">MALTEPE</option>
+                            <option value="PENDİK">PENDİK</option>
+                            <option value="SANCAKTEPE">SANCAKTEPE</option>
+                            <option value="SARIYER">SARIYER</option>
+                            <option value="SİLİVRİ">SİLİVRİ</option>
+                            <option value="SULTANBEYLİ">SULTANBEYLİ</option>
+                            <option value="SULTANGAZİ">SULTANGAZİ</option>
+                            <option value="ŞİLE">ŞİLE</option>
+                            <option value="ŞİŞLİ">ŞİŞLİ</option>
+                            <option value="TUZLA">TUZLA</option>
+                            <option value="ÜSKÜDAR">ÜSKÜDAR</option>
+                            <option value="ÜMRANİYE">ÜMRANİYE</option>
+                            <option value="ZEYTİNBURNU">ZEYTİNBURNU</option>
+                            <option value="İSTANBUL DIŞI">Outside Istanbul</option>
+                        </select>
+                    </div>
+                </div> -->
+                <!-- العنوان الحالي نهاية -->
+            </div>
+            <input class="btn btn-secondary" type="submit" value="تقديم">
+        </form>
+    </div>
+</body>
+
+</html>
