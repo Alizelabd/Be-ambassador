@@ -1,0 +1,112 @@
+:root {
+    --yallow-color: #FFC800;
+    --red-color: #FF337E;
+    --blue-color: #00B8FF;
+    --bg-yallow-color: #ffe00057;
+    --gray-color: #323232;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+ul li {
+    padding: 10px;
+}
+
+/* الكلاسس الجاهزة  */
+.font-sz1 {
+    font-size: clamp(15px, 18px, 5vw);
+}
+
+.font-sz3 {
+    font-size: clamp(20px, 23px, 5vw);
+}
+
+.font-sz5 {
+    font-size: clamp(22px, 25px, 5vw);
+}
+
+.bg-yallow-color {
+    background-color: var(--bg-yallow-color);
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .flex-box {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.image {
+    max-width: 450px;
+}
+
+/*-------------------*/
+/* Start Main Hero Section */
+.main-hero {
+    height: 100dvh;
+}
+
+@media (max-width: 768px) {
+
+    .main-hero .content {
+        text-align: center;
+    }
+}
+
+/* End Main Hero Section */
+/* Start About Tekno Section */
+.about-tekno {
+    background-image: url(../img/texture-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about-tekno .flex-box h3 {
+    color: var(--yallow-color);
+}
+
+/* End About Tekno Section */
+.advantages .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.advantages .box {
+    width: min(300px, 100%);
+    padding: 50px;
+    min-height: 330px;
+    border-radius: 16px;
+    text-align: center;
+    background-color: var(--bg-yallow-color);
+}
+
+#social-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+#social-media a {
+    display: block;
+    width: calc(100% / 3);
+    font-size: 25px;
+}

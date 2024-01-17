@@ -25,7 +25,7 @@
 
     </div>
     <h1 class="text-center fw-bold font-sz5 my-3">نأمل منكم ملء الاستمارة بدقة</h1>
-    <form>
+    <form id="form" method="post">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4">
@@ -65,15 +65,15 @@
                 <!-- نهاية -->
                 <div class="col-md-6 mb-4">
                     <div class="mb-3">
-                        <input type="text" id="position" name="position" class="form-control "
+                        <input type="text" id="position" name="adress" class="form-control "
                             placeholder="مكان الإقامة الحالي" required>
                     </div>
                 </div>
                 <!-- المؤهل الدراسي -->
                 <div class="col-md-6 mb-4">
                     <div class="mb-3">
-                        <input type="text" id="educational" name="educational" class="form-control"
-                            placeholder="المؤهل الدراسي" required>
+                        <input type="text" id="educational" name="qualification" class="form-control"
+                            placeholder="المؤهل العلمي" required>
                     </div>
                 </div>
             </div>
@@ -84,10 +84,10 @@
                         id="Linkedin"></div>
                 <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Facebook" name="facebook"
                         id="facebook"></div>
-                <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Twitter 'X'" name="x"
-                        id="x"></div>
+                <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Twitter 'X'"
+                        name="twitter" id="x"></div>
                 <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Instagram"
-                        name="instagram" id="instagram"></div>
+                        name="instgram" id="instagram"></div>
                 <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Tik Tok" name="tiktok"
                         id="tiktok"></div>
                 <div class="col-md-6 mb-4"><input class="form-control" type="url" placeholder="Snapchat" name="snapchat"
@@ -98,17 +98,17 @@
 
                 <div class="col-md-6 mb-4">
                     <label for="videolink" class="form-label">رابط فيديو لمقطع تدريبي حديث:</label>
-                    <input required class="form-control" type="url" name="videolink" id="videolink">
+                    <input required class="form-control" type="url" name="linkvid" id="videolink">
                 </div>
                 <div class="col-md-6 mb-4">
                     <label for="text2" class="form-label">ما السبب الرئيسي لحماسك للانضمام لمبادرتنا؟</label>
-                    <input required class="form-control" type="text" name="text2" id="text2">
+                    <input required class="form-control" type="text" name="resjoin" id="text2">
                 </div>
                 <div class="col-md-12 mb-2">
                     <label class="form-label">
                         هل هناك نقاط تعاون أخرى يمكن أن تكون بيننا في المستقبل ؟
                     </label>
-                    <textarea required class="form-control" id="" rows="2"></textarea>
+                    <textarea required class="form-control" id="" name="points" rows="2"></textarea>
                 </div>
                 <!-- العنوان الحالي -->
                 <!-- <div class="col-md-6 mb-4">
@@ -159,9 +159,22 @@
                 </div> -->
                 <!-- العنوان الحالي نهاية -->
             </div>
-            <input class="btn btn-secondary" type="submit" value="تقديم">
+            <input class="btn btn-secondary my-3 font-sz1" type="submit" id="liveToastBtn" value="تقديم">
         </div>
     </form>
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">تنبيه</strong>
+                <small>الان</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-black"></div>
+        </div>
+    </div>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
