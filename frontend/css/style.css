@@ -81,7 +81,13 @@ ul li {
 }
 
 /* End About Tekno Section */
-.advantages .container {
+/*START*/
+.advantages{
+    background-image: url(../img/sec_1.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.advantages .container .boxes {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -89,13 +95,19 @@ ul li {
     gap: 10px;
 }
 
-.advantages .box {
+.advantages .boxes .box {
     width: min(300px, 100%);
     padding: 50px;
     min-height: 330px;
     border-radius: 16px;
     text-align: center;
-    background-color: var(--bg-yallow-color);
+    background-color: rgb(255 255 255 / 50%);
+    img{
+        transition: all .3s linear;
+    }
+}
+.advantages .boxes .box:hover img{
+    transform: scale3d(1.2, 1.2, 1.2);
 }
 
 #social-media {
