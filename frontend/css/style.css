@@ -31,7 +31,10 @@ ul li {
 }
 
 .bg-yallow-color {
-    background-color: var(--bg-yallow-color);
+    background-color: #fab60a;
+}
+.bg-blue-color{
+    background-color: #3fa8ce;
 }
 
 .flex-box {
@@ -52,13 +55,36 @@ ul li {
 }
 
 .image {
-    max-width: 450px;
+    max-width: 400px;
 }
 
 /*-------------------*/
 /* Start Main Hero Section */
 .main-hero {
     height: 100dvh;
+    background-image: url(../img/handshake.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-hero::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(000 000 000 / 60%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.main-hero .content{
+    position: relative;
+    color: #fff;
+    z-index: 5;
 }
 
 @media (max-width: 768px) {
@@ -70,22 +96,41 @@ ul li {
 
 /* End Main Hero Section */
 /* Start About Tekno Section */
-.about-tekno {
-    background-image: url(../img/texture-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.about-tekno .flex-box.content{
+    justify-content: space-between;
 }
-
-.about-tekno .flex-box h3 {
+.about-tekno .content .text{
+    max-width: 450px;
+}
+.about-tekno .content h3 {
     color: var(--yallow-color);
 }
 
 /* End About Tekno Section */
 /*START*/
-.advantages{
-    background-image: url(../img/sec_1.svg);
-    background-size: cover;
+.advantages{ 
+    background-image: url(../img/slid-01.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: center;
+}
+.advantages::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgb(255 255 255 / 10%);
+}
+.advantages  .content{
+    position: relative;
+    z-index: 2;
+    background-color: rgb(255 255 255 / 35%);
+    padding: 15px;
+    border-radius: 6px;
 }
 .advantages .container .boxes {
     display: flex;
@@ -97,17 +142,13 @@ ul li {
 
 .advantages .boxes .box {
     width: min(300px, 100%);
-    padding: 50px;
-    min-height: 330px;
-    border-radius: 16px;
     text-align: center;
-    background-color: rgb(255 255 255 / 50%);
     img{
         transition: all .3s linear;
     }
 }
 .advantages .boxes .box:hover img{
-    transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(0.8, 0.8, 0.8);
 }
 
 #social-media {
@@ -122,3 +163,8 @@ ul li {
     width: calc(100% / 3);
     font-size: 25px;
 }
+/*Start Form Style*/
+#form .container{
+    max-width: 550px;
+}
+/*End Form Style*/

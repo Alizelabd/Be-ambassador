@@ -18,11 +18,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
         rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-
-<body class="bg-yallow-color">
+<body class="bg-body-tertiary">
     <div class="participants">
-
     </div>
     <h1 class="text-center fw-bold font-sz5 my-3">نأمل منكم ملء الاستمارة بدقة</h1>
     <form id="form" method="post">
@@ -96,11 +95,11 @@
                     التواصل
                     الاجتماعي</p>
 
-                <div class="col-md-6 mb-4">
+                <div class="col-md-12 mb-4">
                     <label for="videolink" class="form-label">رابط فيديو لمقطع تدريبي حديث:</label>
                     <input required class="form-control" type="url" name="linkvid" id="videolink">
                 </div>
-                <div class="col-md-6 mb-4">
+                <div class="col-md-12 mb-4">
                     <label for="text2" class="form-label">ما السبب الرئيسي لحماسك للانضمام لمبادرتنا؟</label>
                     <input required class="form-control" type="text" name="resjoin" id="text2">
                 </div>
@@ -110,54 +109,7 @@
                     </label>
                     <textarea required class="form-control" id="" name="points" rows="2"></textarea>
                 </div>
-                <!-- العنوان الحالي -->
-                <!-- <div class="col-md-6 mb-4">
-                    <div class="mb-3">
-                        <select class="form-select " name="address" aria-label="العنوان">
-                            <option value="">العنوان </option>
-                            <option value="ARNAVUTKÖY">ARNAVUTKÖY</option>
-                            <option value="ATAŞEHİR">ATAŞEHİR</option>
-                            <option value="AVCILAR">AVCILAR</option>
-                            <option value="BAĞCILAR">BAĞCILAR</option>
-                            <option value="BAHÇELİEVLER">BAHÇELİEVLER</option>
-                            <option value="BAKIRKÖY">BAKIRKÖY</option>
-                            <option value="BAŞAKŞEHİR">BAŞAKŞEHİR</option>
-                            <option value="BAYRAMPAŞA">BAYRAMPAŞA</option>
-                            <option value="BEŞİKTAŞ">BEŞİKTAŞ</option>
-                            <option value="BEYLİKDÜZÜ">BEYLİKDÜZÜ</option>
-                            <option value="BEYOĞLU">BEYOĞLU</option>
-                            <option value="BÜYÜKÇEKMECE">BÜYÜKÇEKMECE</option>
-                            <option value="BEYKOZ">BEYKOZ</option>
-                            <option value="ÇATALCA">ÇATALCA</option>
-                            <option value="ÇEKMEKÖY">ÇEKMEKÖY</option>
-                            <option value="ESENLER">ESENLER</option>
-                            <option value="ESENYURT">ESENYURT</option>
-                            <option value="EYÜP">EYÜP</option>
-                            <option value="FATİH">FATİH</option>
-                            <option value="GAZİOSMANPAŞA">GAZİOSMANPAŞA</option>
-                            <option value="GÜNGÖREN">GÜNGÖREN</option>
-                            <option value="KADIKÖY">KADIKÖY</option>
-                            <option value="KAĞITHANE">KAĞITHANE</option>
-                            <option value="KARTAL">KARTAL</option>
-                            <option value="KÜÇÜKÇEKMECE">KÜÇÜKÇEKMECE</option>
-                            <option value="MALTEPE">MALTEPE</option>
-                            <option value="PENDİK">PENDİK</option>
-                            <option value="SANCAKTEPE">SANCAKTEPE</option>
-                            <option value="SARIYER">SARIYER</option>
-                            <option value="SİLİVRİ">SİLİVRİ</option>
-                            <option value="SULTANBEYLİ">SULTANBEYLİ</option>
-                            <option value="SULTANGAZİ">SULTANGAZİ</option>
-                            <option value="ŞİLE">ŞİLE</option>
-                            <option value="ŞİŞLİ">ŞİŞLİ</option>
-                            <option value="TUZLA">TUZLA</option>
-                            <option value="ÜSKÜDAR">ÜSKÜDAR</option>
-                            <option value="ÜMRANİYE">ÜMRANİYE</option>
-                            <option value="ZEYTİNBURNU">ZEYTİNBURNU</option>
-                            <option value="İSTANBUL DIŞI">Outside Istanbul</option>
-                        </select>
-                    </div>
-                </div> -->
-                <!-- العنوان الحالي نهاية -->
+                <div class="g-recaptcha" data-sitekey="6LeLWFUpAAAAACsn76kg09PQ4QaF3SItFNfwa_qW"></div>
             </div>
             <input class="btn btn-secondary my-3 font-sz1" type="submit" id="liveToastBtn" value="تقديم">
         </div>
@@ -165,7 +117,7 @@
     <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-                <img src="..." class="rounded me-2" alt="...">
+                <img src="./img/favicon.ico" class="rounded me-2" alt="...">
                 <strong class="me-auto">تنبيه</strong>
                 <small>الان</small>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
