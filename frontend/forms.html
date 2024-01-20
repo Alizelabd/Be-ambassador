@@ -105,7 +105,7 @@
 
                 <div class="col-md-12 mb-4">
                     <label for="videolink" class="form-label">رابط فيديو لمقطع تدريبي حديث:</label>
-                    <input required class="form-control" type="url" name="linkvid" id="videolink">
+                    <input style="direction: rtl;" required class="form-control" placeholder="قم برفعه على يوتيوب أو جوجل درايف ومشاركة الرابط هنا" type="url" name="linkvid" id="videolink">
                 </div>
                 <div class="col-md-12 mb-4">
                     <label for="text2" class="form-label">ما السبب الرئيسي لحماسك للانضمام لمبادرتنا؟</label>
@@ -138,8 +138,12 @@
         let input = document.querySelector("#phone");
         window.intlTelInput(input, {
             initialCountry: "tr",
+            showSelectedDialCode: true,
+            autoInsertDialCode: false,
             // utilsScript: "build/js/utils.js"
         });
+        
+        
     </script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/script.js"></script>

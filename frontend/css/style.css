@@ -4,6 +4,7 @@
     --blue-color: #00B8FF;
     --bg-yallow-color: #ffe00057;
     --gray-color: #323232;
+    --padding-space: 120px;
 }
 
 * {
@@ -100,7 +101,8 @@ ul li {
 /* End Main Hero Section */
 /* Start About Tekno Section */
 .about-tekno .flex-box.content {
-    justify-content: space-between;
+    justify-content: center;
+    gap: 60px;
 }
 
 .about-tekno .content .text {
@@ -119,6 +121,8 @@ ul li {
     background-size: cover;
     position: relative;
     background-position: center;
+    padding-top: var(--padding-space);
+    padding-bottom: var(--padding-space);
 }
 
 .advantages::after {
@@ -173,7 +177,12 @@ ul li {
     width: calc(100% / 3);
     font-size: 25px;
 }
-
+/* start */
+.join-list{
+    padding-top: var(--padding-space);
+    padding-bottom: var(--padding-space);
+}
+/* end */
 /*Start Form Style*/
 #form .container {
     max-width: 550px;

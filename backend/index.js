@@ -24,6 +24,16 @@ connection.connect((err) => {
 app.get('/', (req, res) => {
     res.send("<h1>hello world</h1>");
 });
+app.post("/login", (req, res) => {
+    const body = req.body;
+    if (!body) {
+        res.sendStatus(400);
+    }
+    connection.query("SELECT * FROM users", (err, rows, fields) => {
+        res.json(rows);
+    });
+    console.log(body);
+});
 app.get("/fetch", (req, res) => {
     connection.query("SELECT * FROM forms", (err, rows, fields) => {
         res.json(rows);

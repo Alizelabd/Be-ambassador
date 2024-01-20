@@ -1,7 +1,8 @@
 const alertMessage = document.querySelector('.toast-body');
 const toastbox = document.getElementById('liveToast');
 const toastTrigger = document.getElementById('liveToastBtn')
-const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastbox)
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastbox);
+// Phone Number DialCode Get
 if (toastTrigger) {
     toastTrigger.addEventListener('submit', () => {
         toastBootstrap.show();
@@ -10,62 +11,91 @@ if (toastTrigger) {
 function getData() {
     const url = 'http://localhost:3000/fetch';
     let bodyTable = document.getElementById("body-table");
-    fetch(url).then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            data.map((e) => {
-                bodyTable.innerHTML +=
-                    `<tr>
-                        <td>${e.id}</td>
-                        <td>${e.name}</td>
-                        <td>${e.nationality}</td>
-                        <td>${e.adress}</td>
-                        <td>${e.qualification}</td>
-                        <td id="social-media">
-                            ${e.linkedin != '' ? `<a target="_blank" href="${e.linkedin}"><i class="fa-brands fa-linkedin"></i></a>` : ''}
-                            ${e.facebook != '' ? `<a target="_blank" href="${e.facebook}"><i class="fa-brands fa-square-facebook"></i></a>` : ''}
-                            ${e.twitter != '' ? `<a target="_blank" href="${e.twitter}"><i class="fa-brands fa-square-x-twitter"></i></a>` : ''}
-                            ${e.instgram != '' ? `<a target="_blank" href="${e.instgram}"><i class="fa-brands fa-square-instagram"></i></a>` : ''}
-                            ${e.tiktok != '' ? `<a target="_blank" href="${e.tiktok}"><i class="fa-brands fa-tiktok"></i></a>` : ''}
-                            ${e.snapchat != '' ? `<a target="_blank" href="${e.snapchat}"><i class="fa-brands fa-square-snapchat"></i></a>` : ''}
-                        </td>
-                        <td><a href="${e.linkvid}">الفيديو التدريبي</a></td>
-                        <td>${e.resjoin}</td>
-                        <td>${e.points}</td>
-                    </tr>
-            `
+    if (bodyTable) {
+        fetch(url).then((res) => res.json())
+            .then((data) => {
+                data.map((e) => {
+                    bodyTable.innerHTML +=
+                        `<tr>
+                            <td>${e.id}</td>
+                            <td>${e.name}</td>
+                            <td>${e.nationality}</td>
+                            <td>${e.adress}</td>
+                            <td>${e.qualification}</td>
+                            <td id="social-media">
+                                ${e.linkedin != '' ? `<a target="_blank" href="${e.linkedin}"><i class="fa-brands fa-linkedin"></i></a>` : ''}
+                                ${e.facebook != '' ? `<a target="_blank" href="${e.facebook}"><i class="fa-brands fa-square-facebook"></i></a>` : ''}
+                                ${e.twitter != '' ? `<a target="_blank" href="${e.twitter}"><i class="fa-brands fa-square-x-twitter"></i></a>` : ''}
+                                ${e.instgram != '' ? `<a target="_blank" href="${e.instgram}"><i class="fa-brands fa-square-instagram"></i></a>` : ''}
+                                ${e.tiktok != '' ? `<a target="_blank" href="${e.tiktok}"><i class="fa-brands fa-tiktok"></i></a>` : ''}
+                                ${e.snapchat != '' ? `<a target="_blank" href="${e.snapchat}"><i class="fa-brands fa-square-snapchat"></i></a>` : ''}
+                            </td>
+                            <td><a href="${e.linkvid}">الفيديو التدريبي</a></td>
+                            <td>${e.resjoin}</td>
+                            <td>${e.points}</td>
+                        </tr>
+                `
+                });
             });
-        });
+    }
 }
 getData();
 postData();
 function postData() {
     let form = document.getElementById("form");
-    form.onsubmit = (e) => {
-        e.preventDefault();
-        let formData = new FormData(form);
-        console.log(formData);
-        let objData = {};
-        formData.forEach((value, key) => {
-            objData[key] = value;
-        });
-        const urlP = 'http://localhost:3000/post';
-        fetch(urlP, {
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(objData)
-        }).then((res) => {
-            if (res.status === 200) {
+    if (form) {
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            let formData = new FormData(form);
+            let objData = {};
+            formData.forEach((value, key) => {
+                objData[key] = value;
+            });
+            let getDialCode = intlTelInputGlobals.getInstance(phone).selectedCountryData.dialCode;
+            objData.dialCode = getDialCode;
+            console.log(objData);
+            // social media link roles check
+            const arraySocial = [];
+            objData.linkedin == "" ? arraySocial.push(objData.linkedin) : "";
+            objData.twitter == "" ? arraySocial.push(objData.linkedin) : "";
+            objData.facebook == "" ? arraySocial.push(objData.linkedin) : "";
+            objData.instgram == "" ? arraySocial.push(objData.linkedin) : "";
+            objData.tiktok == "" ? arraySocial.push(objData.linkedin) : "";
+            objData.snapchat == "" ? arraySocial.push(objData.linkedin) : "";
+            if (arraySocial.length > 4) {
+                alertMessage.innerHTML = "من فضلك أدخل أثنين من حساباتك على الأقل";
                 toastBootstrap.show();
-                alertMessage.innerHTML= "تم الإرسال بنجاح";
-                setTimeout(() => {location.reload()}, 5000)
             } else {
-                toastBootstrap.show();
-                alertMessage.innerHTML= "فشل الأرسال";
+                const regex = /^[0-9]+$/;
+                if (regex.test(objData.phone)) {
+                    if (objData.g - recaptcha - response != "") {
+                        const urlP = 'http://localhost:3000/post';
+                        fetch(urlP, {
+                            method: "POST",
+                            headers: {
+                                "Accept": "application/json",
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(objData)
+                        }).then((res) => {
+                            if (res.status === 200) {
+                                alertMessage.innerHTML = "تم الإرسال بنجاح";
+                                toastBootstrap.show();
+                                setTimeout(() => { location.reload() }, 3000)
+                            } else {
+                                alertMessage.innerHTML = "فشل الأرسال";
+                                toastBootstrap.show();
+                            }
+                        });
+                    } else {
+                        alertMessage.innerHTML = "تحقق من أنك لست روبوت";
+                        toastBootstrap.show();
+                    }
+                } else {
+                    alertMessage.innerHTML = "أدخل رقم صحيح";
+                    toastBootstrap.show();
+                }
             }
-        });
+        }
     }
 }

@@ -170,7 +170,7 @@
             allowDropdown: true,
             // auto insert dial code (A) on init, (B) on user selecting a country, (C) on calling setCountry
             // also listen for blur/submit and auto remove dial code if that's all there is
-            autoInsertDialCode: false,
+            autoInsertDialCode: true,
             // add a placeholder in the input with an example number for the selected country
             autoPlaceholder: "polite",
             // add a country search input at the top of the dropdown
