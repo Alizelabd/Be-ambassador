@@ -22,6 +22,18 @@
 </head>
 
 <body>
+    <div class="form-app">
+        <div class="container">
+            <form action="" method="post">
+                <label class="form-label font-sz3" for="username">اسم المستخدم:</label>
+                <input type="text" class="form-control" name="username" id="username" required>
+                <label class="form-label font-sz3" for="password">كلمة السر:</label>
+                <input type="password" class="form-control" name="password" id="password" required>
+                <input class="btn btn-primary m-auto d-block mt-3" type="submit" value="تسجيل">
+            </form>
+        </div>
+
+    </div>
     <h1 class="text-center">بيانات المتقدمين</h1>
     <table class="table table-bordered text-center">
         <thead>
@@ -58,6 +70,36 @@
             </tr> -->
         </tbody>
     </table>
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">تسجيل الدخول</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">اسم المستخدم:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="col-form-label">كلمة السر:</label>
+            <input type="password" class="form-control" name="password" id="password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
+        <button type="button" class="btn btn-primary">تسجيل</button>
+      </div>
+    </div>
+  </div>
+</div> -->
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/script.js"></script>
 </body>

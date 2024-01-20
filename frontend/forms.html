@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="صفحة كسن سفيرا">
     <title>كن سفيرا</title>
-
+    <link rel="stylesheet" href="./css/intlTelInput.css">
+    <link rel="stylesheet" href="./css/demo.css">
     <!-- Bootstrap Css File -->
     <link rel="stylesheet" href="./css/bootstrap.rtl.min.css">
     <!-- Main Css File -->
@@ -28,7 +29,7 @@
     <form id="form" method="post">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 mb-4">
+                <div class="col-md-12 mb-4">
                     <div class="mb-3">
                         <input type="text" id="name" name="name" placeholder="الاسم الثلاثي " value=""
                             class="form-control" required>
@@ -76,20 +77,10 @@
                             placeholder="المؤهل العلمي" required>
                     </div>
                 </div>
-                <div class="col-md-12 mb-4">
+                <!-- رقم الهاتف -->
+                <div class="col-md-6 mb-4">
                     <div class="mb-3">
-                        <div class="d-flex align-items-center form-control">
-                            <div class="input-number flex-fill">
-                                <input class="w-100 form-number" placeholder="536 595 61 91" type="tel" name="tel"
-                                    id="tel">
-                            </div>
-                            <div id="select" class="form-select ms-2">
-                                <li id="li"><img style="width: 25px;" src="./js/flags/4x3/tr.svg" alt="tr">
-                                    <span>+90</span></li>
-                                <ul name="list" class="hide" id="list">
-                                </ul>
-                            </div>
-                        </div>
+                        <input class="form-control" placeholder="أدخل رقم الهاتف" type="tel" name="phone" id="phone">
                     </div>
                 </div>
             </div>
@@ -142,7 +133,14 @@
             <div class="toast-body text-black"></div>
         </div>
     </div>
-    <script src="./js/phone.js" async></script>
+    <script src="./js/intlTelInput.js"></script>
+    <script>
+        let input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+            initialCountry: "tr",
+            // utilsScript: "build/js/utils.js"
+        });
+    </script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
