@@ -183,6 +183,16 @@ ul li {
     padding-bottom: var(--padding-space);
 }
 /* end */
+/* Start Terms Style */
+#terms .image{
+    min-width: 350px;
+}
+@media (max-width: 991px) {
+    #terms .image{
+        display: none;
+    }
+}
+/* End Terms Style */
 /*Start Form Style*/
 #form .container {
     max-width: 550px;
@@ -214,3 +224,18 @@ ul li {
 }
 
 /* End */
+/* Start Details Page */
+.grid-system{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+    gap: 25px;
+}
+
+#details-app .personal{
+    background-color: white;
+    border: 1px solid #f5f5ff;
+}
+#details-app .social-media-box a i{
+    font-size: 40px;
+}
+/* End Details Page */

@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <div class="form-app">
+    <!-- <div class="form-app">
         <div class="container">
             <form action="http://localhost:3000/login" method="post">
                 <label class="form-label font-sz3" for="username">اسم المستخدم:</label>
@@ -31,11 +31,14 @@
                 <input type="password" class="form-control" name="password" id="password" required>
                 <input class="btn btn-primary m-auto d-block mt-3" type="submit" value="تسجيل">
             </form>
-        </div>
+        </div> -->
 
     </div>
     <h1 class="text-center">بيانات المتقدمين</h1>
-    <table class="table table-bordered text-center">
+    <div class="text-center m-3 font-sz3 fw-bold d-flex align-items-center">
+      <div id="count-data">0</div>
+    </div>
+    <table class="table table-bordered table-hover text-center">
         <thead>
             <tr>
                 <th scope="col">id</th>
@@ -43,6 +46,8 @@
                 <th scope="col">الجنسية</th>
                 <th scope="col">العنوان</th>
                 <th scope="col">المؤهل العلمي</th>
+                <th scope="col">النداء الدولي</th>
+                <th scope="col">رقم الهاتف</th>
                 <th scope="col">حسابات السوشل ميديا</th>
                 <th scope="col">فيديو التدريب</th>
                 <th scope="col">سبب الانضمام</th>
