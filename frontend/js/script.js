@@ -36,8 +36,6 @@ async function getData() {
                                 ${e.snapchat != '' ? `<a target="_blank" href="${e.snapchat}"><i class="fa-brands fa-square-snapchat"></i></a>` : ''}
                             </td>
                             <td><a href="${e.linkvid}">الفيديو التدريبي</a></td>
-                            <td>${e.resjoin}</td>
-                            <td>${e.points}</td>
                         </tr>
                 `
                 });
