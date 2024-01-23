@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -24,15 +25,20 @@
 <body>
     <h1 class="my-5 text-center fw-bold">التفاصيل</h1>
     <div class="container-fluid">
+        <div style="max-width: 800px; margin: auto;" class="input-id mb-3 border-bottom">
+            <label class="form-label fw-bold">أدخل الـ ID:</label>
+            <input type="number" class="form-control" name="id" id="id">
+            <button onclick="getId()" class="btn my-3 m-auto d-block bg-yallow-color fw-bold">جلب البيانات</button>
+        </div>
         <div id="details-app">
-            <div class="grid-system">
+            <div style="margin: 50px auto; display: block;" class="text-light-emphasis fw-bold font-sz3 text-center">لا يوجد اي بيانات</div>
+            <!-- <div class="grid-system">
                 <div class="personal-box p-5 shadow font-sz3 rounded">
                     <h3 class="text-center mb-3 fw-bold text-success">المعلومات الشخصية</h3>
                     <div class="d-flex">
                         <div>الاسم</div>
-                        <div class="adderss ms-auto">
+                        <div class="ms-auto">
                             <i class="fa-solid fa-location-dot"></i>
-                            العنوان
                         </div>
                     </div>
                     <div class="d-flex">
@@ -45,12 +51,12 @@
                 <div class="social-media-box p-5 shadow font-sz3 rounded">
                     <h3 class="text-center mb-3 fw-bold text-primary">حسابات التواصل الإجتماعي</h3>
                     <div id="social-media" class="gap-5">
-                        <a target="_blank" href="${e.linkedin}"><i class="fa-brands fa-linkedin"></i></a>
-                        <a target="_blank" href="${e.facebook}"><i class="fa-brands fa-square-facebook"></i></a>
-                        <a target="_blank" href="${e.twitter}"><i class="fa-brands fa-square-x-twitter"></i></a>
-                        <a target="_blank" href="${e.instgram}"><i class="fa-brands fa-square-instagram"></i></a>
-                        <a target="_blank" href="${e.tiktok}"><i class="fa-brands fa-tiktok"></i></a>
-                        <a target="_blank" href="${e.snapchat}"><i class="fa-brands fa-square-snapchat"></i></a>
+                        <a target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+                        <a target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                        <a target="_blank"><i class="fa-brands fa-square-snapchat"></i></a>
                     </div>
                 </div>
                 <div class="question-box p-5 shadow font-sz3 rounded">
@@ -61,12 +67,13 @@
                     <h3 class="text-center fw-bold mb-3 text-info">نقاط التعاون يمكن أن تكون بيننا في المستقبل</h3>
                     <p></p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Bootstrap JS File -->
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/script.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/detailsScript.js"></script>
 </body>
 
 </html>

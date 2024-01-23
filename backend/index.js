@@ -39,11 +39,7 @@ app.get("/fetch", (req, res) => {
         res.json(rows);
     });
 });
-app.get("/test", (req, res) => {
-    connection.query(`SELECT * FROM forms WHERE id=${req.body.id}`, (err, rows, fileds) => {
-        res.json(rows);
-    });
-});
+;
 app.get('/data/:dataId', (req, res) => {
     const dataId = req.params.dataId;
 
@@ -55,9 +51,8 @@ app.get('/data/:dataId', (req, res) => {
             res.status(500).send('Internal Server Error');
             return;
         }
-
         if (results.length === 0) {
-            res.status(404).send('المنتج غير موجود');
+            res.status(404).send('البيانات غير موجودة');
         } else {
             const data = results[0];
             res.json(data);

@@ -24,7 +24,7 @@ ul li {
 }
 
 .font-sz3 {
-    font-size: clamp(20px, 23px, 5vw);
+    font-size: clamp(19px, 22px, 5vw);
 }
 
 .font-sz5 {
@@ -229,11 +229,6 @@ ul li {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
     gap: 25px;
-}
-
-#details-app .personal{
-    background-color: white;
-    border: 1px solid #f5f5ff;
 }
 #details-app .social-media-box a i{
     font-size: 40px;

@@ -1,9 +1,9 @@
+
 const alertMessage = document.querySelector('.toast-body');
 const countData = document.getElementById("count-data");
 const toastbox = document.getElementById('liveToast');
 const toastTrigger = document.getElementById('liveToastBtn')
 const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastbox);
-// Phone Number DialCode Get
 if (toastTrigger) {
     toastTrigger.addEventListener('submit', () => {
         toastBootstrap.show();
@@ -14,7 +14,7 @@ async function getData() {
     let bodyTable = document.getElementById("body-table");
     if (bodyTable) {
         await fetch(url)
-        .then((res) => res.json())
+            .then((res) => res.json())
             .then((data) => {
                 data.map((e) => {
                     bodyTable.innerHTML +=
@@ -38,7 +38,6 @@ async function getData() {
                             <td><a href="${e.linkvid}">الفيديو التدريبي</a></td>
                             <td>${e.resjoin}</td>
                             <td>${e.points}</td>
-                            <td><button class="btn btn-success" onclick(getDetails(${e.id}))>التفاصيل</button></td>
                         </tr>
                 `
                 });
@@ -47,25 +46,11 @@ async function getData() {
     }
 }
 getData();
-async function getDetails(id) {
-    await fetch(`http://localhost:3000/data/${id}`, {
-        method: "POST",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({id})
-    }).then((res) => {
-        if (res.status === 200) {
-            
-        }
-    })
-}
 postData();
 function postData() {
     let form = document.getElementById("form");
     if (form) {
-         form.onsubmit = (e) => {
+        form.onsubmit = (e) => {
             e.preventDefault();
             let formData = new FormData(form);
             let objData = {};
@@ -90,7 +75,7 @@ function postData() {
                 const regex = /^[0-9]+$/;
                 if (regex.test(objData.phone)) {
                     const urlP = 'http://localhost:3000/post';
-                     fetch(urlP, {
+                    fetch(urlP, {
                         method: "POST",
                         headers: {
                             "Accept": "application/json",
