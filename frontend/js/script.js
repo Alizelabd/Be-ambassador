@@ -57,7 +57,6 @@ function postData() {
             });
             let getDialCode = intlTelInputGlobals.getInstance(phone).selectedCountryData.dialCode;
             objData.dialCode = getDialCode;
-            console.log(getDialCode);
             // social media link roles check
             const arraySocial = [];
             objData.linkedin == "" ? arraySocial.push(objData.linkedin) : "";
@@ -72,24 +71,29 @@ function postData() {
             } else {
                 const regex = /^[0-9]+$/;
                 if (regex.test(objData.phone)) {
-                    const urlP = 'http://localhost:3000/post';
-                    fetch(urlP, {
-                        method: "POST",
-                        headers: {
-                            "Accept": "application/json",
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(objData)
-                    }).then((res) => {
-                        if (res.status === 200) {
-                            alertMessage.innerHTML = "تم الإرسال بنجاح";
-                            toastBootstrap.show();
-                            setTimeout(() => { location.reload() }, 3000)
-                        } else {
-                            alertMessage.innerHTML = "فشل الأرسال";
-                            toastBootstrap.show();
-                        }
-                    });
+                    if (grecaptcha.getResponse()) {
+                        const urlP = 'http://localhost:3000/post';
+                        fetch(urlP, {
+                            method: "POST",
+                            headers: {
+                                "Accept": "application/json",
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(objData)
+                        }).then((res) => {
+                            if (res.status === 200) {
+                                alertMessage.innerHTML = "تم الإرسال بنجاح";
+                                toastBootstrap.show();
+                                setTimeout(() => { location.reload() }, 3000)
+                            } else {
+                                alertMessage.innerHTML = "فشل الأرسال";
+                                toastBootstrap.show();
+                            }
+                        });
+                    } else {
+                        alertMessage.innerHTML = "أكمل تحقق انا لست روبوت";
+                        toastBootstrap.show();
+                    }
                 } else {
                     alertMessage.innerHTML = "أدخل رقم صحيح";
                     toastBootstrap.show();
