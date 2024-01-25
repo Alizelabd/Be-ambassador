@@ -24,16 +24,15 @@ connection.connect((err) => {
 app.get('/', (req, res) => {
     res.send("<h1>hello world</h1>");
 });
-// app.post("/login", (req, res) => {
-//     const body = req.body;
-//     if (!body) {
-//         res.sendStatus(400);
-//     }
-//     connection.query("SELECT * FROM users", (err, rows, fields) => {
-//         res.json(rows);
-//     });
-//     console.log(body);
-// });
+app.post("/login", (req, res) => {
+    const body = req.body;
+    if (!body) {
+        res.sendStatus(400);
+    }
+    connection.query("SELECT * FROM users", (err, rows, fields) => {
+        res.json(rows);
+    });
+});
 app.get("/fetch", (req, res) => {
     connection.query("SELECT * FROM forms", (err, rows, fields) => {
         res.json(rows);
@@ -76,7 +75,8 @@ app.post("/post", (req, res) => {
         snapchat: body.snapchat,
         linkvid: body.linkvid,
         resjoin: body.resjoin,
-        points: body.points
+        points: body.points,
+        date: body.date
     }
     if (!body) {
         return res.sendStatus(400);

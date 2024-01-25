@@ -36,6 +36,7 @@ async function getData() {
                                 ${e.snapchat != '' ? `<a target="_blank" href="${e.snapchat}"><i class="fa-brands fa-square-snapchat"></i></a>` : ''}
                             </td>
                             <td><a href="${e.linkvid}">الفيديو التدريبي</a></td>
+                            <td>${e.date}</td>
                         </tr>
                 `
                 });
@@ -43,6 +44,7 @@ async function getData() {
             });
     }
 }
+console.log(`${new Date().getFullYear()}/${new Date().getMonth()+1}/${new Date().getDate( )}`);
 getData();
 postData();
 function postData() {
@@ -57,6 +59,7 @@ function postData() {
             });
             let getDialCode = intlTelInputGlobals.getInstance(phone).selectedCountryData.dialCode;
             objData.dialCode = getDialCode;
+            objData.date = `${new Date().getFullYear()}/${new Date().getMonth()+1}/${new Date().getDate( )}`;
             // social media link roles check
             const arraySocial = [];
             objData.linkedin == "" ? arraySocial.push(objData.linkedin) : "";
