@@ -44,7 +44,6 @@ async function getData() {
             });
     }
 }
-console.log(`${new Date().getFullYear()}/${new Date().getMonth()+1}/${new Date().getDate( )}`);
 getData();
 postData();
 function postData() {

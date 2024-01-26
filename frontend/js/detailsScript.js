@@ -12,7 +12,6 @@ function getId() {
                     return res.json();
                 }
             }).then((data) => {
-                console.log(data);
                 if (detailsApp) {
                     detailsApp.innerHTML =
                         `
